@@ -5,14 +5,19 @@ async function main() {
   //   await prisma.user.deleteMany();
   const user = await prisma.user.findMany({
     where: {
-      name: "swapnil",
+      AND: [
+        {
+          name: {
+            contains: "h",
+          },
+        },
+        {
+          email: {
+            contains: "@gmail.com",
+          },
+        },
+      ],
     },
-    orderBy: {
-      age: "asc",
-    },
-
-    // take: 2,
-    // skip: 1,
   });
 
   console.log({ user });
