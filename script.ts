@@ -7,8 +7,12 @@ async function main() {
     where: {
       name: "swapnil",
     },
-    take: 2,
-    skip: 1,
+    orderBy: {
+      age: "asc",
+    },
+
+    // take: 2,
+    // skip: 1,
   });
 
   console.log({ user });
